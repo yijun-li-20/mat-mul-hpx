@@ -17,19 +17,6 @@ if(EXISTS "${HPX_DIR}")
   if("${SETUP_TYPE}" STREQUAL "TARGETS")
 
     target_link_libraries(mat_mul PRIVATE HPX::hpx HPX::wrap_main)
-
-  elseif("${SETUP_TYPE}" STREQUAL "MACROS")
-    if(HPX_WITH_DISTRIBUTED_RUNTIME)
-      hpx_setup_target(
-        hello_world_component
-        COMPONENT_DEPENDENCIES iostreams
-        DEPENDENCIES HPX::wrap_main
-        TYPE COMPONENT
-      )
-      hpx_setup_target(hello_world_client DEPENDENCIES hello_world_component)
-    else()
-      hpx_setup_target(hello_world_client)
-    endif()
   else()
     message(FATAL_ERROR "Unknown SETUP_TYPE=\"${SETUP_TYPE}\"")
   endif()
