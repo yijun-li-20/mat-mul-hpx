@@ -12,4 +12,4 @@
     - `HPX_DIR=$HPX_BUILD/lib/cmake/HPX`
     - `HPX_OUTPUT_DIRECTORY=$HPX_INSTALL`
 - Configure and generate, open VS in privileged mode
-- Build the target and run fron command line
+- Build the target and run from command line
